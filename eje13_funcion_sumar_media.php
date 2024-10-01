@@ -1,5 +1,5 @@
 <?php
-// Definimos la función suma
+
 function suma($numeros) {
     $resultado = 0;
     foreach ($numeros as $numero) {
@@ -8,14 +8,13 @@ function suma($numeros) {
 
     return $resultado;
 }
-// Definimos la función media
+
 function media($numeros) {
     $suma = suma($numeros);
 
     return $suma / count($numeros);
 }
 
-// Mientras haya líneas en stdin que procesar
 while($fila = fgets(STDIN)) : ?>
 <p><?php
     $argumentos = explode(" ",trim($fila));
