@@ -1,6 +1,6 @@
 <?php
-$visitas = 0;
-$visitas++;
+    $visitas = 0;
+    $visitas++;
 ?>
 
 <p>Usted ha visitado la página:</p>
