@@ -27,8 +27,8 @@ function imprimeFactoresPrimos($array) {
     return rtrim($factores_concatenados, " * ");
 }
 
-while ($fila = fgets(STDIN)): 
+while ($fila = fgets(STDIN)){
     $numero = trim($fila);
     echo "<p>$numero = " .imprimeFactoresPrimos(factoresPrimos($numero)) . "</p>\n";
-endwhile; 
+}
 ?>

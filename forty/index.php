@@ -1,7 +1,12 @@
 <?php
-$nombre = (isset($_GET['name'])) ? $_GET['name'] : "Brother";
-$email = (isset($_GET['email'])) ? $_GET['email'] : "undefined@undifined.tld";
-
+//$email = (isset($_POST['email'])) ? $_POST['email'] : "undefined@undifined.tld";
+$nameErr = "";
+if(isset($_POST['name']) && !empty($_POST['name'])){
+	$nombre = $_POST['name'];
+} else{
+	$nameErr = "Name is required";
+	$nombre = "Brother";
+}
 //$nombre = $_GET['name'] ?? "Brother";
 //$nombre = $_GET['email'] ?? "undefined@undifined.tld";
 ?>
@@ -50,7 +55,7 @@ $email = (isset($_GET['email'])) ? $_GET['email'] : "undefined@undifined.tld";
 					<section id="banner" class="major">
 						<div class="inner">
 							<header class="major">
-								<h1>Hi, my name is <?php echo $_GET['name'];?></h1>
+								<h1>Hi, my name is <?php echo $_POST['name'];?></h1>
 							</header>
 							<div class="content">
 								<p>A responsive site template designed by php5 UP<br />
@@ -142,11 +147,11 @@ $email = (isset($_GET['email'])) ? $_GET['email'] : "undefined@undifined.tld";
 					<section id="contact">
 						<div class="inner">
 							<section>
-								<form method="get" action="#">
+								<form method="post" action="index.php">
 									<div class="fields">
 										<div class="field half">
-											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
+											<label for="name">Name <?php echo $nameErr;?></label>
+											<input type="text" name="name" id="name"/>
 										</div>
 										<div class="field half">
 											<label for="email">Email</label>
@@ -168,7 +173,7 @@ $email = (isset($_GET['email'])) ? $_GET['email'] : "undefined@undifined.tld";
 									<div class="contact-method">
 										<span class="icon solid alt fa-envelope"></span>
 										<h3>Email</h3>
-										<a href="#"><?php echo $_GET['email'];?>
+										<a href="#"><?php echo $_POST['email'];?>
 										</a>
 									</div>
 								</section>
